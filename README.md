@@ -103,28 +103,35 @@ _Note: The `latest` Docker container tag builds nightly off of the latest code c
 
     curl -s -o docker-compose.yml https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/containers/docker/pwpush-mysql/docker-compose.yml && docker compose up -d
 
-## On Kubernetes
+## Digital Ocean
+
+Sign up to Digital Ocean [with this link](https://m.do.co/c/f4ea6ef24c13) and **get $200 in credit to spend**.  This also supports this project as Password Pusher will get a helpful hosting credit.
+
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/pglombardo/PasswordPusher/tree/master)
+
+
+## Kubernetes
 
 Instructions and explanation of a Kubernetes setup [can be found
 here](https://github.com/pglombardo/PasswordPusher/tree/master/containers/kubernetes).
 
-## On Microsoft Azure
+## Microsoft Azure
 
 _There used to be a 3rd party blog post with instructions but it's been deleted.  If anyone has instructions they would like to contribute, it would be greatly appreciated._
 
 See [issue #277](https://github.com/pglombardo/PasswordPusher/issues/277)
 
-## On OpenShift
+## OpenShift
 
 See our [OpenShift documentation](https://github.com/pglombardo/PasswordPusher/tree/master/containers/docker#pwpush-openshift).
 
-## On Heroku
+## Heroku
 
 One click deploy to [Heroku Cloud](https://www.heroku.com) without having to set up servers.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pglombardo/PasswordPusher)
 
-_This option will deploy a production Password Pusher instance backed by a postgres database to Heroku.  Heroku used to offer free dynos but that is [no longer the case](https://blog.heroku.com/next-chapter) from November 28, 2022.  Hosting charges will be incurred._
+_Heroku used to offer free dynos but that is [no longer the case](https://blog.heroku.com/next-chapter) from November 28, 2022._
 
 ## From Source
 
