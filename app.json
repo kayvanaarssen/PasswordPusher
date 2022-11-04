@@ -3,7 +3,7 @@
   "description": "An application to communicate passwords over the web. Passwords expire after a certain number of views and/or time has passed.",
   "repository": "https://github.com/pglombardo/PasswordPusher",
   "logo": "https://s3-eu-west-1.amazonaws.com/pwpush/pwpush_logo.png",
-  "keywords": ["password", "security", "expire"],
+  "keywords": ["password", "security", "expire", "sysadmin", "msp"],
   "addons": [
     "heroku-postgresql"
   ],
@@ -11,13 +11,57 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
+    "PWP__MAIL__ENABLE_LOGINS": {
+      "description": "Optionally enable the user login system.  Requires the mail and SMTP settings below.",
+      "value": ""
+    },
+    "PWP__MAIL__HOST_DOMAIN": {
+      "description": "The domain where your site is hosted.  Used to build fully qualified URLs in emails.",
+      "value": ""
+    },
+    "PWP__MAIL__MAILER_SENDER": {
+      "description": "The email address that sent emails are 'From'. e.g. 'Password Pusher' <pglombardo@pwpush.com>'",
+      "value": ""
+    },
+    "PWP__MAIL__RAISE_DELIVERY_ERRORS": {
+      "description": "Optionally raise exceptions when mail couldn't be delivered.",
+      "value": "true"
+    },
+    "PWP__MAIL__SMTP_ADDRESS": {
+      "description": "SMTP server address",
+      "value": ""
+    },
+    "PWP__MAIL__SMTP_PASSWORD": {
+      "description": "SMTP server password",
+      "value": ""
+    },
+    "PWP__MAIL__SMTP_USER_NAME": {
+      "description": "SMTP server username",
+      "value": ""
+    },
+    "RACK_ENV": {
+      "description": "Application execution environment",
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "description": "Application execution environment",
+      "value": "production"
+    },
+    "PWP__LOG_TO_STDOUT": {
+      "description": "Log output to STDOUT",
+      "value": "true"
+    },
+    "PWP__LOG_LEVEL": {
+      "description": "Application logging levels: debug, info, warn, error, fatal",
+      "value": "info"
+    },
     "BUNDLE_WITHOUT": "development:test:private",
     "PWPUSH_MASTER_KEY": {
       "description": "Application Encryption Key",
       "generator": "secret"
     },
     "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
+      "description": "The number of webserver worker processes to run.",
       "value": "3"
     },
     "PWP__EXPIRE_AFTER_DAYS_DEFAULT": {
@@ -59,6 +103,10 @@
     "PWP__RETRIEVAL_STEP_DEFAULT": {
       "description": "The default value for the 1-click retrieval step option.",
       "value": "true"
+    },
+    "CUSTOM_RUBY_VERSION": {
+      "description": "Heroku Fix: See https://devcenter.heroku.com/articles/ruby-support#supported-runtimes",
+      "value": "3.1.2"
     }
   }
 }
